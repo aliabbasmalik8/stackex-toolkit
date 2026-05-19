@@ -1,0 +1,28 @@
+{
+  "name": "@stackex/toolkit-sdk",
+  "version": "0.1.0",
+  "description": "StackEx toolkit SDK — error boundary, console forwarding, web polyfills",
+  "private": true,
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./metro": {
+      "default": "./metro/index.js"
+    },
+    "./metro-transformer": {
+      "default": "./metro/transformer.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "metro"
+  ],
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  }
+}
