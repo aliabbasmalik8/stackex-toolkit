@@ -2,7 +2,7 @@ const path = require('path');
 
 const libPath = path.resolve(__dirname, '../lib/');
 
-function withNBMetro(config) {
+function withStackExMetro(config) {
   const originalResolveRequest = config.resolver?.resolveRequest;
 
   return {
@@ -48,4 +48,4 @@ function withNBMetro(config) {
   };
 }
 
-module.exports = { withNBMetro };
+module.exports = { withStackExMetro };
