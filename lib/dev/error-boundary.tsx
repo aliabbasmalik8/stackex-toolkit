@@ -1,5 +1,5 @@
 import React, { Component, type ErrorInfo, type ReactNode } from 'react';
-import { Platform } from 'react-native';
+import { LogBox, Platform } from 'react-native';
 
 // ---------------------------------------------------------------------------
 // postMessage helper
@@ -48,6 +48,10 @@ if (Platform.OS === 'web' && typeof window !== 'undefined' && window.parent && w
   try {
     window.parent.postMessage({ type: 'NB_PREVIEW_READY', timestamp: new Date().toISOString() }, '*');
   } catch { /* silent */ }
+
+  // Suppress Expo's default LogBox error overlay on web — errors are
+  // captured via postMessage and handled by the frontend instead.
+  LogBox.ignoreAllLogs();
 
   // Patch console methods
   const levels: Array<{ method: NbLogLevel }> = [
